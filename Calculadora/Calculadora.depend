@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1603690152 source:c:\users\rayel\desktop\calculadora\main.cpp
+	<iostream>
+	<math.h>
+	<windows.h>
+	<sstream>
+
