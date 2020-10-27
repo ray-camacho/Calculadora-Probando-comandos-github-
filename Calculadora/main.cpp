@@ -10,8 +10,9 @@
 using namespace std;
 
 ///Prototipo de funciones
-int factorial(int n);
 float operacion_basica(int);
+int modulo(int);
+int potencia(int); 
 
 ///Funcion main
 int main()
@@ -64,18 +65,19 @@ int main()
                 resultado=operacion_basica(opc);
                 cout<<"\n\t\tResultado: "<<resultado;
                 break;
-
-            case 9:{
-                int n; ///variable local
-                cout<<"Ingrese un valor entero :";
-                cin>>n;
-                if(n >= 0)
-                    cout<<factorial(n);///pasamos el valor por parametro
-                else
-                    cout<<"\n\tOpcion Invalida";
+           //Funcion de potencia
+            case 6:
+                resultado=potencia(opc);
+                cout<<"\n\t\tResultado: "<<resultado;
                 break;
-            }
-
+            case 7:
+                resultado = raizCuadrada(opc);
+                cout << "\n\t\t resultado: " << resultado;
+                break;
+            case 8:
+                resultado=modulo(opc);
+                cout<<"\n\t\tResultado: "<<resultado;
+                break;
             ///En caso que se ingrese una opcion invalida
             default:
                 cout<<"\n\tOpcion Invalida";
@@ -124,14 +126,59 @@ float operacion_basica(int opcion)
     }
     ///Devuelve el resultado de los 2 datos anteriores
     return resultado;
+} 
+/// Funcion que se encarga de la potencia
+int potencia(int opcion)
+{
+    cout<<"Opcion escogida:"<<opcion<<endl;
+    ///variables locales
+    int resultado = 0;
+    int dato_1 = 0;
+    int dato_2 = 0;
+    string cadena=" ";
+    ///Solicita el primer dato y lo convierte de string a int evitando que el usuario ingrese un dato que provoque un error al programa
+    cout<<"Dame el numero"<<endl;
+    cin>>cadena;
+    stringstream geek(cadena);
+    geek >> dato_1;
+    ///Solicita el segundo dato y lo convierte de string a int evitando que el usuario ingrese un dato que provoque un error al programa
+    cout<<"Dame la potencia"<<endl;
+    cin>>cadena;
+    stringstream geek_2(cadena);
+    geek_2 >> dato_2;
+    ///Asigna la potencia al resultado para retornarlo
+    resultado = pow(dato_1,dato_2);
+    return resultado;
 }
 
-int factorial(int n)///funcion recursivo
+int modulo(int opcion)
 {
-    if(n > 1)
-        return n * factorial(n - 1);///recursividad
-    else if(n ==0 || n == 1)
-        return 1;///si el valor de n es 0 o 1, la respuesta es 1
-    else
-        return -1;/// si se ingresa otro valor, es considerado como un dato de error_category
+    cout<<"Opcion escogida:"<<opcion<<endl;
+    ///variables locales
+    int resultado = 0;
+    int dato_1 = 0;
+    int dato_2 = 0;
+    string cadena=" ";
+    ///Solicita el primer dato y lo convierte de string a float evitando que el usuario ingrese un dato que provoque un error al programa
+    cout<<"Dame el dividendo"<<endl;
+    cin>>cadena;
+    stringstream geek(cadena);
+    geek >> dato_1;
+    ///Solicita el segundo dato y lo convierte de string a float evitando que el usuario ingrese un dato que provoque un error al programa
+    cout<<"Dame el divisor"<<endl;
+    cin>>cadena;
+    stringstream geek_2(cadena);
+    geek_2 >> dato_2;
+    ///Asigna el modulo al resultado para retornar
+    resultado = dato_1 % dato_2;
+    return resultado;
+}
+
+float raizCuadrada(int n) {
+    float dato, raiz;
+    cout << "\n\t Raiz cuadrada\n";
+    cout << "\n\t Introduzca un numero: ";
+    cin >> dato;
+    raiz = sqrt(dato);
+    return raiz;
 }
