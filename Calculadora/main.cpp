@@ -12,6 +12,7 @@ using namespace std;
 ///Prototipo de funciones
 float operacion_basica(int);
 int modulo(int);
+int potencia(int); 
 
 ///Funcion main
 int main()
@@ -62,6 +63,11 @@ int main()
             case 4:
             case 5:
                 resultado=operacion_basica(opc);
+                cout<<"\n\t\tResultado: "<<resultado;
+                break;
+           //Funcion de potencia
+            case 6:
+                resultado=potencia(opc);
                 cout<<"\n\t\tResultado: "<<resultado;
                 break;
             case 8:
@@ -116,7 +122,31 @@ float operacion_basica(int opcion)
     }
     ///Devuelve el resultado de los 2 datos anteriores
     return resultado;
+} 
+/// Funcion que se encarga de la potencia
+int potencia(int opcion)
+{
+    cout<<"Opcion escogida:"<<opcion<<endl;
+    ///variables locales
+    int resultado = 0;
+    int dato_1 = 0;
+    int dato_2 = 0;
+    string cadena=" ";
+    ///Solicita el primer dato y lo convierte de string a int evitando que el usuario ingrese un dato que provoque un error al programa
+    cout<<"Dame el numero"<<endl;
+    cin>>cadena;
+    stringstream geek(cadena);
+    geek >> dato_1;
+    ///Solicita el segundo dato y lo convierte de string a int evitando que el usuario ingrese un dato que provoque un error al programa
+    cout<<"Dame la potencia"<<endl;
+    cin>>cadena;
+    stringstream geek_2(cadena);
+    geek_2 >> dato_2;
+    ///Asigna la potencia al resultado para retornarlo
+    resultado = pow(dato_1,dato_2);
+    return resultado;
 }
+
 int modulo(int opcion)
 {
     cout<<"Opcion escogida:"<<opcion<<endl;
