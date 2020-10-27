@@ -12,7 +12,8 @@ using namespace std;
 ///Prototipo de funciones
 float operacion_basica(int);
 int modulo(int);
-int potencia(int); 
+int potencia(int);
+float raizCuadrada(int);
 
 ///Funcion main
 int main()
@@ -41,7 +42,6 @@ int main()
         <<"\n\t8-->Modulo %"
         <<"\n\t9-->Factorial"
         <<"\n\t10-->Logaritmo"
-        <<"\n\t11-->Convertidor de unidades"
         <<"\n\n\t\tOpcion numero: ";
         ///Guarda la eleccion del usuario
         cin>>opcion;
