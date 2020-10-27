@@ -11,6 +11,7 @@ using namespace std;
 
 ///Prototipo de funciones
 float operacion_basica(int);
+float raizCuadrada(int);
 
 ///Funcion main
 int main()
@@ -64,6 +65,10 @@ int main()
                 cout<<"\n\t\tResultado: "<<resultado;
                 break;
             ///En caso que se ingrese una opcion invalida
+            case 7:
+                resultado = raizCuadrada(opc);
+                cout << "\n\t\t resultado: " << resultado;
+                break;
             default:
                 cout<<"\n\tOpcion Invalida";
         }
@@ -111,4 +116,13 @@ float operacion_basica(int opcion)
     }
     ///Devuelve el resultado de los 2 datos anteriores
     return resultado;
+}
+
+float raizCuadrada(int n) {
+    float dato, raiz;
+    cout << "\n\t Raiz cuadrada\n";
+    cout << "\n\t Introduzca un numero: ";
+    cin >> dato;
+    raiz = sqrt(dato);
+    return raiz;
 }
