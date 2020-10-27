@@ -70,6 +70,10 @@ int main()
                 resultado=potencia(opc);
                 cout<<"\n\t\tResultado: "<<resultado;
                 break;
+            case 7:
+                resultado = raizCuadrada(opc);
+                cout << "\n\t\t resultado: " << resultado;
+                break;
             case 8:
                 resultado=modulo(opc);
                 cout<<"\n\t\tResultado: "<<resultado;
@@ -168,4 +172,13 @@ int modulo(int opcion)
     ///Asigna el modulo al resultado para retornar
     resultado = dato_1 % dato_2;
     return resultado;
+}
+
+float raizCuadrada(int n) {
+    float dato, raiz;
+    cout << "\n\t Raiz cuadrada\n";
+    cout << "\n\t Introduzca un numero: ";
+    cin >> dato;
+    raiz = sqrt(dato);
+    return raiz;
 }
