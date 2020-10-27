@@ -79,7 +79,7 @@ int main()
                 resultado=modulo(opc);
                 cout<<"\n\t\tResultado: "<<resultado;
                 break;
-            case 9:{
+            case 9:
                 int n; ///variable local
                 cout<<"Ingrese un valor entero :";
                 cin>>n;
