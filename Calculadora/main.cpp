@@ -14,6 +14,7 @@ float operacion_basica(int);
 int modulo(int);
 int potencia(int);
 float raizCuadrada(int);
+int factorial(int);
 
 ///Funcion main
 int main()
@@ -77,6 +78,15 @@ int main()
             case 8:
                 resultado=modulo(opc);
                 cout<<"\n\t\tResultado: "<<resultado;
+                break;
+            case 9:{
+                int n; ///variable local
+                cout<<"Ingrese un valor entero :";
+                cin>>n;
+                if(n >= 0)
+                    cout<<factorial(n);///pasamos el valor por parametro
+                else
+                    cout<<"\n\tOpcion Invalida";
                 break;
             ///En caso que se ingrese una opcion invalida
             default:
@@ -181,4 +191,14 @@ float raizCuadrada(int n) {
     cin >> dato;
     raiz = sqrt(dato);
     return raiz;
+}
+
+int factorial(int n)///funcion recursivo
+{
+    if(n > 1)
+        return n * factorial(n - 1);///recursividad
+    else if(n ==0 || n == 1)
+        return 1;///si el valor de n es 0 o 1, la respuesta es 1
+    else
+        return -1;/// si se ingresa otro valor, es considerado como un dato de error_category
 }
