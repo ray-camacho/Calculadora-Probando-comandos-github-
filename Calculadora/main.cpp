@@ -15,6 +15,7 @@ int modulo(int);
 int potencia(int);
 float raizCuadrada(int);
 int factorial(int);
+double algoritmo_base(int);
 
 ///Funcion main
 int main()
@@ -80,13 +81,12 @@ int main()
                 cout<<"\n\t\tResultado: "<<resultado;
                 break;
             case 9:
-                int n; ///variable local
-                cout<<"Ingrese un valor entero :";
-                cin>>n;
-                if(n >= 0)
-                    cout<<factorial(n);///pasamos el valor por parametro
-                else
-                    cout<<"\n\tOpcion Invalida";
+                resultado=factorial(opc);
+                cout<< "\n\t\t resultado: " << resultado;
+                break;
+            case 10:
+                resultado=algoritmo_base(opc);
+                cout<< "\n\t\t resultado: " << resultado;
                 break;
             ///En caso que se ingrese una opcion invalida
             default:
@@ -193,12 +193,34 @@ float raizCuadrada(int n) {
     return raiz;
 }
 
-int factorial(int n)///funcion recursivo
+int factorial(int opcion)///funcion recursivo
 {
-    if(n > 1)
-        return n * factorial(n - 1);///recursividad
-    else if(n ==0 || n == 1)
-        return 1;///si el valor de n es 0 o 1, la respuesta es 1
+    cout<<"Opcion escogida:"<<opcion<<endl;
+    int resultado = 1;
+    int num; ///variable local
+    cout<<"Ingrese un valor entero :"<<endl;
+    cin>>num;
+    if(num > 1){
+        for(int i=1; i<=num; i++){
+            resultado = resultado * i;
+         }
+        return resultado;}
+    else if(num==0 || num== 1)
+        return resultado=1;//Si la entrada es cero cero o uno.
     else
-        return -1;/// si se ingresa otro valor, es considerado como un dato de error_category
+        return -1;
+}
+double valueE(double num) 
+{ 
+    return log(num); //Retorna el logaritmo natural
+}
+double algoritmo_base(int opcion){
+    double num;
+    double resultado;
+    cout<<"Opcion escogida:"<<opcion<<endl;
+    cout<<"Ingrese un valor :"<<endl;
+    cin>>num; 
+    resultado=valueE(num);//Llama la funcion Logaritmo  
+    return resultado;//Retorna el valor
+    
 }
