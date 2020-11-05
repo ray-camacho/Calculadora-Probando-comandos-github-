@@ -193,8 +193,7 @@ float raizCuadrada(int n) {
     return raiz;
 }
 
-int factorial(int opcion)///funcion recursivo
-{
+int factorial(int opcion)///funcion factorial
     cout<<"Opcion escogida:"<<opcion<<endl;
     int resultado = 1;
     int num; ///variable local
